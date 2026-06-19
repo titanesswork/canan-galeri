@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<title>Canan Özaktay · Carousel Önizleme</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0B1420;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;padding:0 0 90px}
+.bar{position:sticky;top:0;z-index:30;background:rgba(11,20,32,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);padding:20px 40px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar h1{font-size:22px;font-weight:800;color:#C9A961;letter-spacing:-.01em}
+.bar .n{font-size:14px;color:rgba(255,255,255,.45)}
+.hint{padding:16px 40px 8px;font-size:13px;color:rgba(255,255,255,.4)}
+section{padding:20px 0 8px}section:nth-child(even){background:rgba(255,255,255,.02)}
+.hd{display:flex;align-items:center;gap:11px;padding:0 40px 16px;flex-wrap:wrap}
+.pno{background:#C9A961;color:#0B1420;font-size:13px;font-weight:800;padding:5px 13px;border-radius:8px;letter-spacing:.02em}
+.hd h2{font-size:19px;font-weight:700}
+.t{font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px}
+.t.dark{background:rgba(31,58,95,.6);color:#9db4d4}.t.light{background:rgba(201,169,97,.18);color:#C9A961}
+.t.ok{background:rgba(60,160,90,.22);color:#7ed99b}.t.draft{background:rgba(255,255,255,.08);color:rgba(255,255,255,.55)}
+.t.cnt{background:transparent;color:rgba(255,255,255,.4);font-weight:500}
+.tarih{font-size:12.5px;color:rgba(255,255,255,.45);font-weight:500}
+.rail{display:flex;gap:16px;overflow-x:auto;padding:0 40px 20px;scroll-snap-type:x mandatory}
+.rail::-webkit-scrollbar{height:9px}.rail::-webkit-scrollbar-thumb{background:rgba(201,169,97,.4);border-radius:5px}
+.s{position:relative;flex:0 0 auto;scroll-snap-align:start}
+.s img{height:440px;width:auto;border-radius:13px;display:block;box-shadow:0 14px 44px rgba(0,0,0,.5);cursor:zoom-in;transition:transform .15s}
+.s img:hover{transform:scale(1.02)}
+.s span{position:absolute;top:11px;left:11px;background:rgba(11,20,32,.85);color:#C9A961;font-size:13px;font-weight:800;padding:4px 11px;border-radius:8px}
+dialog{border:none;background:transparent;padding:0;max-width:96vw;max-height:96vh}
+dialog img{max-width:96vw;max-height:96vh;display:block;border-radius:10px}dialog::backdrop{background:rgba(0,0,0,.88)}
+#gate{position:fixed;inset:0;z-index:100;background:#0B1420;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+#gate h2{color:#C9A961;font-size:24px;font-weight:800}#gate p{color:rgba(255,255,255,.5);font-size:14px}
+#gate input{padding:14px 20px;border-radius:10px;border:1px solid rgba(201,169,97,.4);background:rgba(255,255,255,.05);color:#fff;font-size:16px;width:240px;text-align:center}
+#gate button{padding:13px 30px;border-radius:10px;border:none;background:#C9A961;color:#0B1420;font-size:16px;font-weight:800;cursor:pointer}
+.hidden{display:none}
+</style></head><body>
+<div id="gate"><h2>Canan Özaktay · Önizleme</h2><p>Devam etmek için şifre</p>
+  <form id="gf" autocomplete="off" onsubmit="return chk()"><input id="pw" type="password" placeholder="Şifre" autocomplete="off" autofocus>
+  <button type="button" onclick="chk()">Gör</button></form></div>
+<div id="app" class="hidden">
+  <div class="bar"><h1>Canan Özaktay · Carousel · Yayın</h1><span class="n">3 set</span></div>
+  <div class="hint">Yan kaydır → slaytlar · görsele dokun → tam ekran</div>
+  <section>
+    <div class="hd">
+      <span class="pno">Post 1</span>
+      <h2>South Florida'da Mülk Alırken 7 Kritik Soru</h2><span class="t ok">✓ onaylı</span><span class="t dark">koyu</span>
+      <span class="t cnt">9 slayt</span>
+      <span class="tarih">📅 Paylaşım: [belirlenecek]</span>
+    </div>
+    <div class="rail"><div class="s"><img loading="lazy" src="south-florida-7-soru/south-florida-7-soru-01-kapak.png"><span>01</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru/south-florida-7-soru-02-numara.png"><span>02</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru/south-florida-7-soru-03-numara.png"><span>03</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru/south-florida-7-soru-04-numara.png"><span>04</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru/south-florida-7-soru-05-numara.png"><span>05</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru/south-florida-7-soru-06-numara.png"><span>06</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru/south-florida-7-soru-07-numara.png"><span>07</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru/south-florida-7-soru-08-numara.png"><span>08</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru/south-florida-7-soru-09-cta.png"><span>09</span></div></div></section>
+<section>
+    <div class="hd">
+      <span class="pno">Post 1 · Açık tema</span>
+      <h2>South Florida'da Mülk Alırken 7 Kritik Soru</h2><span class="t ok">✓ onaylı</span><span class="t light">açık</span>
+      <span class="t cnt">9 slayt</span>
+      <span class="tarih">📅 Paylaşım: [belirlenecek]</span>
+    </div>
+    <div class="rail"><div class="s"><img loading="lazy" src="south-florida-7-soru-light/south-florida-7-soru-light-01-kapak.png"><span>01</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru-light/south-florida-7-soru-light-02-numara.png"><span>02</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru-light/south-florida-7-soru-light-03-numara.png"><span>03</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru-light/south-florida-7-soru-light-04-numara.png"><span>04</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru-light/south-florida-7-soru-light-05-numara.png"><span>05</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru-light/south-florida-7-soru-light-06-numara.png"><span>06</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru-light/south-florida-7-soru-light-07-numara.png"><span>07</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru-light/south-florida-7-soru-light-08-numara.png"><span>08</span></div><div class="s"><img loading="lazy" src="south-florida-7-soru-light/south-florida-7-soru-light-09-cta.png"><span>09</span></div></div></section>
+<section>
+    <div class="hd">
+      <span class="pno">Post 2</span>
+      <h2>26&2 Wynwood — Türünün İlki (Ev + Ofis + Airbnb)</h2><span class="t ok">✓ onaylı</span><span class="t dark">koyu</span>
+      <span class="t cnt">7 slayt</span>
+      <span class="tarih">📅 Paylaşım: [belirlenecek]</span>
+    </div>
+    <div class="rail"><div class="s"><img loading="lazy" src="26and2-turunun-ilki/26and2-turunun-ilki-01-kapak.png"><span>01</span></div><div class="s"><img loading="lazy" src="26and2-turunun-ilki/26and2-turunun-ilki-02-gorsel.png"><span>02</span></div><div class="s"><img loading="lazy" src="26and2-turunun-ilki/26and2-turunun-ilki-03-gorsel.png"><span>03</span></div><div class="s"><img loading="lazy" src="26and2-turunun-ilki/26and2-turunun-ilki-04-gorsel.png"><span>04</span></div><div class="s"><img loading="lazy" src="26and2-turunun-ilki/26and2-turunun-ilki-05-gorsel.png"><span>05</span></div><div class="s"><img loading="lazy" src="26and2-turunun-ilki/26and2-turunun-ilki-06-gorsel.png"><span>06</span></div><div class="s"><img loading="lazy" src="26and2-turunun-ilki/26and2-turunun-ilki-07-cta.png"><span>07</span></div></div></section>
+  <dialog id="zoom"><img id="zimg"></dialog>
+</div>
+<script data-cfasync="false">
+function open_(){document.getElementById('gate').classList.add('hidden');document.getElementById('app').classList.remove('hidden');
+  const dlg=document.getElementById('zoom'),zi=document.getElementById('zimg');
+  document.querySelectorAll('.s img').forEach(im=>im.addEventListener('click',()=>{zi.src=im.src;dlg.showModal()}));
+  dlg.addEventListener('click',()=>dlg.close());}
+function chk(){var v=(document.getElementById('pw').value||'').trim();if(v==='Canan2026'){try{localStorage.setItem('cg','1')}catch(e){}open_()}else{alert('Şifre yanlış ('+v.length+' karakter). Doğrusu: Canan2026')}return false}
+try{if(localStorage.getItem('cg')==='1')open_()}catch(e){}
+</script></body></html>
