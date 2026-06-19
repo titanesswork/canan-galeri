@@ -71,6 +71,6 @@ function open_(){document.getElementById('gate').classList.add('hidden');documen
   const dlg=document.getElementById('zoom'),zi=document.getElementById('zimg');
   document.querySelectorAll('.s img').forEach(im=>im.addEventListener('click',()=>{zi.src=im.src;dlg.showModal()}));
   dlg.addEventListener('click',()=>dlg.close());}
-function chk(){var v=(document.getElementById('pw').value||'').trim();if(v==='Canan2026'){try{localStorage.setItem('cg','1')}catch(e){}open_()}else{alert('Şifre yanlış ('+v.length+' karakter). Doğrusu: Canan2026')}return false}
+function chk(){var v=(document.getElementById('pw').value||'').replace(/\s/g,'').toLowerCase();if(v==='canan2026'){try{localStorage.setItem('cg','1')}catch(e){}open_()}else{alert('Şifre yanlış. Büyük/küçük harf farketmez, şunu yazın: Canan2026')}return false}
 try{if(localStorage.getItem('cg')==='1')open_()}catch(e){}
 </script></body></html>
